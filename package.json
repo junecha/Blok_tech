@@ -1,1 +1,9 @@
-
+{
+  "name": "Blok_tech",
+  "description": "Hier komt een lijst met alle packages te staan die ik nodig zal hebben voor het maken van mijn applicatie, een dating site",
+  "version": "1.0.0",
+  "homepage": "https://github.com/ChunningTatum/Blok_tech",
+  "author": "Chun Hui Xiao (https://github.com/ChunningTatum)",
+  "license": "GNU General Public License v3.0",
+  "main": "Index.js",
+  ],
