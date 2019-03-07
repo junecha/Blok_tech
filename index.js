@@ -2,6 +2,8 @@ const express = require('express')
 const port = 3000
 const app = express()
 
+app.use('/static', express.static('static'));
+
 app.get('/', (req, res) => res.send('Hello World!'))
 
 app.get('/about', (req, res) => res.send('about'))
