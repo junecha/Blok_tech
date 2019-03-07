@@ -6,4 +6,4 @@ app.get('/', (req, res) => res.send('Hello World!'))
 
 app.get('/about', (req, res) => res.send('about'))
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(`index.js app listening on port ${port}!`))
