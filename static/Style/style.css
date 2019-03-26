@@ -1,3 +1,96 @@
 body{
-  background-color: gray;
+  font-family: sans-serif;
+  background-color: #F8F8F8;
+}
+
+header{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+header img{
+  width: 250px;
+  height: 250px;
+  border-radius: 80%;
+}
+
+section img{
+  width: 20px;
+  height: 20px;
+}
+
+section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2{
+  margin-right: 20px;
+}
+
+.wrap_head{
+  display: flex;
+  align-items: center;
+}
+
+button{
+  border: none;
+  background: none;
+}
+
+button:hover{
+  background-color: red;
+  border-radius: 10%;
+
+}
+
+article{
+  background-color: white;
+}
+
+
+form{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal{
+  display: none; /*Hide by default*/
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }

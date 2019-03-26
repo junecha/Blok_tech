@@ -18,6 +18,9 @@
   "homepage": "https://github.com/ChunningTatum/Blok_tech#readme",
   "dependencies": {
     "express": "^4.16.4",
-    "pug": "^2.0.3"
+    "mongodb": "^3.2.2",
+    "pug": "^2.0.3",
+    "dotenv": "^7.0.0",
+    "ejs": "^2.6.1"
   }
 }
