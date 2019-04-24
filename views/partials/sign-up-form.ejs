@@ -1,0 +1,49 @@
+<form id="frm1" >
+  <h1>Registreren</h1>
+
+  <div id="form-1" >
+    <fieldset>
+      <legend>Wie ben jij?</legend>
+      <div>
+        <label>Naam: <input type="text" id="nameText" placeholder="Je naam.."></label>
+        <label>Achternaam: <input type="text" id="lastName"name="achternaam" placeholder="Je achternaam.."></label>
+        <label>Leeftijd: <input type="text" name="leeftijd" placeholder="Je leeftijd.."></label>
+        <label>Geslacht:</label>
+        <div id="radio-wrapper">
+          <label> <input type="radio" name="gender" value="Man">Man</label>
+          <label> <input type="radio" name="gender" value="Vrouw">Vrouw</label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+  <div id="form-2" >
+    <fieldset>
+      <legend>Account</legend>
+      <label>E-mail: <input type="text" placeholder="example@vb.nl"></label>
+      <label>Wachtwoord: <input type="password" maxlength="20"></label>
+      <label>Herhaal wachtwoord <input type="password" maxlength="20"></label>
+    </fieldset>
+  </div>
+
+  <div id="form-3" >
+    <fieldset>
+      <legend>Interesses</legend>
+      <div id="radio-wrapper">
+        <label><input type="checkbox" class="checks" name="interesse" value="Atletiek">Atletiek</label>
+        <label><input type="checkbox" class="checks" name="interesse" value="Fitness">Fitness</label>
+        <label><input type="checkbox" class="checks" name="interesse" value="Voetbal">Voetbal</label>
+        <label><input type="checkbox" class="checks" name="interesse" value="Volleybal">Volleybal</label>
+        <label><input type="checkbox" class="checks" name="interesse" value="Basketbal">Basketbal</label>
+        <label><input type="checkbox" class="checks" name="interesse" value="Rugby">Rugby</label>
+      </div>
+    </fieldset>
+  </div>
+
+  <!-- button -->
+  <div>
+    <button type="submit" name="Submit">Submit</button>
+  </div>
+</form>
+
+</aside>
