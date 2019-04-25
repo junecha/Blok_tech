@@ -1,6 +1,6 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var MongoClient = require('mongodb').MongoClient;
+var express = require('express'); //Source: https://expressjs.com/
+var bodyParser = require('body-parser'); //https://www.npmjs.com/package/body-parser
+var MongoClient = require('mongodb').MongoClient; //Source: https://www.npmjs.com/package/mongodb
 var ObjectId = require('mongodb').ObjectId
 var dotenv = require('dotenv');
 var session = require('express-session');
@@ -18,13 +18,17 @@ var dbName = process.env.DB_NAME;
 var dbSecret = process.env.SESSION_SECRET
 var client = new MongoClient(dbUrl, { useNewUrlParser: true });
 
-client.connect(error => {
-  if (error) {
-    console.log(error);
-    throw error;
-  }
+// client.connect(error => {
+//   if (error) {
+//     console.log(error);
+//     throw error;
+//   }
+//   db = client.db(dbName);
+// });
+
+MongoClient.connect(dbUrl, function(err, client) {
   db = client.db(dbName);
-});
+})
 
 
 //Express server----------------------------------------------------------------
@@ -92,14 +96,14 @@ function logIn(req, res) {
 
 //Get data from the form that the user sends
 function getFormData(req, res) {
-  var resultArray = [];
+  var userInfo = [];
   mongo.connect(dbUrl, function(err, db) {
     var cursor = db.collection('users').find();
     cursor.forEach(function(doc, err) {
-      resultArray.push(doc);
+      userInfo.push(doc);
     }, function() {
       res.render('index.ejs', {
-        person: resultArray
+        person: userInfo
       });
     });
   })
