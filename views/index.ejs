@@ -1,12 +1,17 @@
-<% include partials/head.ejs %>
+<% include partials/index-head.ejs %>
 
 <body>
-  <header>
-    <h1>TanTan</h1>
-  </header>
-  <button type="button" name="sign-in"> Sign up</button>
+  <div class="background">
 
-  <a href="/sign-up"> <button type="button" name="log-in">Log in</button> </a>
+  </div>
+  <section>
+    <h1>TanTan</h1>
+    <div class="button-wrapper">
+      <a href="/sign-up"> <button type="button" name="sign-in"> Sign up </button> </a>
+      <a href="/log-in"> <button type="button" name="log-in"> Log in </button> </a>
+    </div>
+  </section>
 
   <script src="script.js"></script>
+
 </body>

@@ -1,0 +1,55 @@
+html {
+  background: url("/static/images/background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body {
+  margin-top: 10em;
+  font-family: sans-serif;
+}
+
+h1 {
+  font-size: 6em;
+  color: black;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  background: #B9F6D1;
+  background-image: -webkit-linear-gradient(top, #B9F6D1, #F2FFFD);
+  background-image: -moz-linear-gradient(top, #B9F6D1, #F2FFFD);
+  background-image: -ms-linear-gradient(top, #B9F6D1, #F2FFFD);
+  background-image: -o-linear-gradient(top, #B9F6D1, #F2FFFD);
+  background-image: linear-gradient(to bottom, #B9F6D1, #F2FFFD);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  height: 50px;
+  color: #000000;
+  font-family: Verdana;
+  width: 200px;
+  font-size: 2.3em;
+  padding: 29px;
+  box-shadow: 12px 18px 16px 0px #B8D9FF;
+  -webkit-box-shadow: 12px 18px 16px 0px #B8D9FF;
+  -moz-box-shadow: 12px 18px 16px 0px #B8D9FF;
+  text-shadow: 12px 3px 34px #000000;
+  border: solid #337FED 0px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #FFFFFF;
+  text-decoration: none;
+}

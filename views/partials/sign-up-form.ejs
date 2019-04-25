@@ -1,13 +1,13 @@
-<form id="frm1" >
+<form id="frm1" action=/ method=post>
   <h1>Registreren</h1>
 
   <div id="form-1" >
     <fieldset>
       <legend>Wie ben jij?</legend>
       <div>
-        <label>Naam: <input type="text" id="nameText" placeholder="Je naam.."></label>
-        <label>Achternaam: <input type="text" id="lastName"name="achternaam" placeholder="Je achternaam.."></label>
-        <label>Leeftijd: <input type="text" name="leeftijd" placeholder="Je leeftijd.."></label>
+        <label>Naam: <input type="text" id="nameText" name="firstname" placeholder="Je naam.."></label>
+        <label>Achternaam: <input type="text" id="lastName" name="lastname" placeholder="Je achternaam.."></label>
+        <label>Leeftijd: <input type="text" name="age" placeholder="Je leeftijd.."></label>
         <label>Geslacht:</label>
         <div id="radio-wrapper">
           <label> <input type="radio" name="gender" value="Man">Man</label>
@@ -20,8 +20,8 @@
   <div id="form-2" >
     <fieldset>
       <legend>Account</legend>
-      <label>E-mail: <input type="text" placeholder="example@vb.nl"></label>
-      <label>Wachtwoord: <input type="password" maxlength="20"></label>
+      <label>E-mail: <input type="text" name="email" placeholder="example@vb.nl"></label>
+      <label>Wachtwoord: <input type="password" name="password" maxlength="20"></label>
       <label>Herhaal wachtwoord <input type="password" maxlength="20"></label>
     </fieldset>
   </div>
