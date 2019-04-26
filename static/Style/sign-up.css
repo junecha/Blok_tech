@@ -1,0 +1,104 @@
+html {
+  background: url("/static/images/background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+h1 {
+  font-size: 6em;
+  color: #75eda4;
+  text-align: center;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  background: #75eda4;
+  background-image: -webkit-linear-gradient(top, #B9F6D1, #F2FFFD);
+  background-image: -moz-linear-gradient(top, #B9F6D1, #F2FFFD);
+  background-image: -ms-linear-gradient(top, #B9F6D1, #F2FFFD);
+  background-image: -o-linear-gradient(top, #B9F6D1, #F2FFFD);
+  background-image: linear-gradient(to bottom, #B9F6D1, #F2FFFD);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  height: 50px;
+  color: #000000;
+  font-family: Verdana;
+  width: 200px;
+  font-size: 2.3em;
+  padding: 29px;
+  box-shadow: 12px 18px 16px 0px #B8D9FF;
+  -webkit-box-shadow: 12px 18px 16px 0px #B8D9FF;
+  -moz-box-shadow: 12px 18px 16px 0px #B8D9FF;
+  text-shadow: 12px 3px 34px #000000;
+  border: solid #337FED 0px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  margin-top: 2em;
+  margin-bottom: 5em;
+}
+
+button:hover {
+  background: #FFFFFF;
+  text-decoration: none;
+}
+
+#log-in-button {
+  margin-top: 1em;
+}
+
+legend {
+  text-align: center;
+}
+
+fieldset {
+  background-color: white;
+  border: none;
+  font-size: 2em;
+  border-radius: 10px;
+  padding: 20px;
+  width: 25em;
+  display: flex;
+  align-items: center;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+}
+
+input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: #75eda4;
+  font-size: 1em;
+}
+
+.fieldset-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#radio-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
