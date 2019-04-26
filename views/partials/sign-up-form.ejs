@@ -1,49 +1,41 @@
 <form id="frm1" action=/ method=post>
-  <h1>Registreren</h1>
+  <h1>Register</h1>
 
-  <div id="form-1" >
-    <fieldset>
-      <legend>Wie ben jij?</legend>
+  <div class="fieldset-wrapper">
+    <fieldset id="#log-in-field">
+      <legend>Who are you?</legend>
       <div>
-        <label>Naam: <input type="text" id="nameText" name="firstname" placeholder="Je naam.."></label>
-        <label>Achternaam: <input type="text" id="lastName" name="lastname" placeholder="Je achternaam.."></label>
-        <label>Leeftijd: <input type="text" name="age" placeholder="Je leeftijd.."></label>
-        <label>Geslacht:</label>
+        <label>Name <input type="text" id="nameText" name="firstname" placeholder="Your name.."></label>
+        <label>Last Name <input type="text" id="lastName" name="lastname" placeholder="Your last name.."></label>
+        <label>Age <input type="text" name="age" placeholder="Your age.."></label>
         <div id="radio-wrapper">
-          <label> <input type="radio" name="man" value="Man">Man</label>
-          <label> <input type="radio" name="vrouw" value="Vrouw">Vrouw</label>
+          <label> <input type="radio" name="gender" value="Man">Man</label>
+          <label> <input type="radio" name="gender" value="Woman">Woman</label>
         </div>
       </div>
     </fieldset>
-  </div>
 
-  <div id="form-2" >
     <fieldset>
       <legend>Account</legend>
-      <label>E-mail: <input type="text" name="email" placeholder="example@vb.nl"></label>
-      <label>Wachtwoord: <input type="password" name="password" maxlength="20"></label>
-      <label>Herhaal wachtwoord <input type="password" maxlength="20"></label>
+      <label>E-mail <input type="text" name="email" placeholder="example@vb.nl"></label>
+      <label>Password <input type="password" name="password" maxlength="20"></label>
+      <label>Repeat Password <input type="password" maxlength="20"></label>
     </fieldset>
-  </div>
 
-  <div id="form-3" >
     <fieldset>
-      <legend>Interesses</legend>
+      <legend>Interest</legend>
       <div id="radio-wrapper">
-        <label><input type="checkbox" class="checks" name="interesse" value="Atletiek">Atletiek</label>
-        <label><input type="checkbox" class="checks" name="interesse" value="Fitness">Fitness</label>
-        <label><input type="checkbox" class="checks" name="interesse" value="Voetbal">Voetbal</label>
-        <label><input type="checkbox" class="checks" name="interesse" value="Volleybal">Volleybal</label>
-        <label><input type="checkbox" class="checks" name="interesse" value="Basketbal">Basketbal</label>
-        <label><input type="checkbox" class="checks" name="interesse" value="Rugby">Rugby</label>
+        <label><input type="checkbox" name="interest" value="Dumplings">Dumplings</label>
+        <label><input type="checkbox" name="interest" value="Yam Cha">Yam Cha</label>
+        <label><input type="checkbox" name="interest" value="KBBQ">KBBQ</label>
+        <label><input type="checkbox" name="interest" value="Ramen">Ramen</label>
+        <label><input type="checkbox" name="interest" value="Bibimbab">Bibimbab</label>
+        <label><input type="checkbox" name="interest" value="Sushi">Sushi</label>
       </div>
     </fieldset>
-  </div>
 
-  <!-- button -->
-  <div>
-    <button type="submit" name="Submit">Submit</button>
+    <!-- button -->
+    <div>
+      <button type="submit" name="Submit">Submit</button>
+    </div>
   </div>
-</form>
-
-</aside>
