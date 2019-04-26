@@ -116,7 +116,9 @@ function addUser(req, res) {
     lastname: req.body.lastname,
     age: req.body.age,
     email: req.body.email,
-    password: req.body.password
+    password: req.body.password,
+    gender: req.body.gender,
+    interest: req.body.interest
   };
 
   db.collection("users").insertOne(person, (err, person) => {
