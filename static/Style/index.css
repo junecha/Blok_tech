@@ -13,7 +13,7 @@ body {
 
 h1 {
   font-size: 6em;
-  color: black;
+  color: #75eda4;
 }
 
 section {
@@ -24,7 +24,7 @@ section {
 }
 
 button {
-  background: #B9F6D1;
+  background: #75eda4;
   background-image: -webkit-linear-gradient(top, #B9F6D1, #F2FFFD);
   background-image: -moz-linear-gradient(top, #B9F6D1, #F2FFFD);
   background-image: -ms-linear-gradient(top, #B9F6D1, #F2FFFD);
@@ -52,4 +52,33 @@ button {
 button:hover {
   background: #FFFFFF;
   text-decoration: none;
+}
+
+#log-in-button {
+  margin-top: 1em;
+}
+
+legend {
+  text-align: center;
+}
+
+#log-in-field {
+  background-color: white;
+  border: none;
+  font-size: 2em;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: #75eda4;
+  font-size: 1em;
 }
