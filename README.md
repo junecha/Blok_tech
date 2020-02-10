@@ -2,13 +2,6 @@
 
 ## What am I looking at?
 
-This is a web application I am making for school, it is a dating app. The goal of the app, is to find a serious relationship and my focus, are asian people that like the same food.
-
-The app has the following basic functionalities: 
-* Register (+upload a photo)
-* Login
-* Logout
-
 ## Wiki
 
 Check my wiki for all the documentation.
