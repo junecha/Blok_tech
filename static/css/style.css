@@ -19,8 +19,28 @@ h1 {
   font-size: 3em;
 }
 
+button:first-of-type {
+  margin-right: 15px;
+}
+
 button {
   background-color: #5e4fa0;
   border: none;
-  padding: 40px;
+  padding: 20px 50px;
+  font-size: 1em;
+  font-family: proxima-nova, sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  color: #f2f2f2;
+}
+
+button:hover {
+  background-color: #9affdd;
+  color: #5e4fa0;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1em;
 }
