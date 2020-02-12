@@ -1,7 +1,7 @@
 # READ ME
 
 ## What am I looking at?
-
+A dating application for the project Tech I am following. The application is build in Node and the server is written with Express. Also the database that I am using is MongoDB.
 ## Wiki
 
 Check my wiki for all the documentation. (FYI wiki is written in Dutch)
