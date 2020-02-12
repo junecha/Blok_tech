@@ -4,7 +4,7 @@
 
 ## Wiki
 
-Check my wiki for all the documentation.
+Check my wiki for all the documentation. (FYI wiki is written in Dutch)
 
 ## Database
 
