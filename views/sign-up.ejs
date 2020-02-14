@@ -3,37 +3,17 @@
   <title>Sign up to Nova</title>
 </head>
 
-<form id="frm1" action=/ method=post>
-  <h1>Sign up</h1>
-
-  <div class="fieldset-wrapper">
-    <fieldset id="#log-in-field">
-      <legend>Who are you?</legend>
-      <div>
-        <label>Name <input type="text" id="nameText" name="firstname" placeholder="Your name.."></label>
-        <label>Last Name <input type="text" id="lastName" name="lastname" placeholder="Your last name.."></label>
-        <label>Age <input type="text" name="age" placeholder="Your age.."></label>
-        <div id="radio-wrapper">
-          <label> <input type="radio" name="gender" value="Man">Man</label>
-          <label> <input type="radio" name="gender" value="Woman">Woman</label>
-        </div>
-      </div>
-    </fieldset>
-
+<body>
+  <form class="" action="/sign-up" method="post">
     <fieldset>
-      <legend>Account</legend>
-      <label>E-mail <input type="text" name="email" placeholder="example@vb.nl"></label>
-      <label>Password <input type="password" name="password" maxlength="20"></label>
-      <label>Repeat Password <input type="password" maxlength="20"></label>
+      <label for="name">Name:
+        <input type="text" name="name">
+      </label>
+      <label for="age">Age:
+        <input type="text" name="age">
+      </label>
     </fieldset>
+    <a href="/"><button type="submit" name="Submit">Submit</button></a>
 
-    <fieldset>
-      <legend>What games do you play?</legend>
-
-    </fieldset>
-
-    <!-- button -->
-    <div>
-      <button type="submit" name="Submit">Submit</button>
-    </div>
-  </div>
+  </form>
+</body>
