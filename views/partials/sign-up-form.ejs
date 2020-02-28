@@ -1,0 +1,28 @@
+<body>
+  <form method="POST" action="/sign-up">
+    <fieldset>
+      <label>Name:
+        <input type="text" name="name" placeholder="Jhon" required>
+      </label>
+      <label>Last name:
+        <input type="text" name="lastname" placeholder="Doe" required>
+      </label>
+      <label for="age">Age:
+        <input type="text" name="age" placeholder="e.g. '23'" required>
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <label>Email:
+        <input type="text" name="email" placeholder="User@gmail.com" required>
+      </label>
+      <label>Password:
+        <input type="password" name="password" required>
+      </label>
+      <label>repeat password:
+        <input type="password" required>
+      </label>
+    </fieldset>
+    <a href="/"><button type="submit" name="Submit">Submit</button></a>
+  </form>
+</body>
