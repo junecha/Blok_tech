@@ -1,6 +1,8 @@
 <body>
   <form method="POST" action="/sign-up">
     <fieldset>
+      <h2>Create your new profile</h2>
+      <p>Fill here you personal information for others to see.</p>
       <label>Name:
         <input type="text" name="name" placeholder="Jhon" required>
       </label>
@@ -13,8 +15,10 @@
     </fieldset>
 
     <fieldset>
+      <h2>Log in</h2>
+      <p>These forms are to log in to Nova</p>
       <label>Email:
-        <input type="text" name="email" placeholder="User@gmail.com" required>
+        <input type="email" name="email" placeholder="User@gmail.com" required>
       </label>
       <label>Password:
         <input type="password" name="password" required>
@@ -23,6 +27,28 @@
         <input type="password" required>
       </label>
     </fieldset>
-    <a href="/"><button type="submit" name="Submit">Submit</button></a>
+
+    <fieldset>
+      <h2>My info</h2>
+      <p>I am:</p>
+      <label>Male
+        <input type="radio" name="gender" value="Male">
+      </label>
+      <label>Female
+        <input type="radio" name="gender" value="Female">
+      </label>
+      <p>I am looking for:</p>
+      <label>Male
+        <input type="radio" name="searchp" value="Male">
+      </label>
+      <label>Female
+        <input type="radio" name="searchp" value="Female">
+      </label>
+      <p>Type of games I Play</p>
+      <label>
+        <input type="checkbox" name="gender" value="Male">
+      </label>
+    </fieldset>
+        <a href="/"><button type="submit" name="Submit">Submit</button></a>
   </form>
 </body>

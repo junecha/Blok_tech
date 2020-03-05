@@ -22,7 +22,25 @@ app.use(bodyParser.urlencoded({
   extended: true
 }))
 
+//Connect with the database-----------------------------------------------------
 
+let db = null;
+
+const dbUri = process.env.DB_URI;
+const dbName = process.env.DB_NAME;
+const client = new MongoClient(dbUri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+
+client.connect(err => {
+  if (err) {
+    console.log(err);
+    throw err;
+  }
+  db = client.db(dbName);
+  console.log("Connected to database")
+});
 
 //Routing-----------------------------------------------------------------------
 
@@ -38,25 +56,11 @@ app.get('/log-in', (req, res) => {
   res.render('log-in.ejs')
 })
 
+app.get('/user', (req, res) => {
+  res.render('user.ejs')
+});
+
 app.listen(port, () => console.log("Listening on port " + port))
-
-
-// Intialize connection to MongoDB database-------------------------------------
-let db = null;
-const dbUri = process.env.DB_URI;
-const dbName = process.env.DB_NAME;
-const client = new MongoClient(dbUri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
-
-client.connect(err => {
-  if (err) {
-    console.log(err);
-    throw err;
-  }
-  db = client.db(dbName);
-});
 
 //'Self made' packages----------------------------------------------------------
 const createUser = require('./control/createuser.js');

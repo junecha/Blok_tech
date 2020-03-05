@@ -26,9 +26,12 @@ client.connect(err => {
 module.exports = (req, res) => {
   let person = {
     name: req.body.name,
+    lastName: req.body.lastname,
     age: req.body.age,
     email: req.body.email,
-    password: req.body.password
+    password: req.body.password,
+    gender: req.body.gender,
+    preference: req.body.searchp
   };
 
   db.collection("person").insertOne(person, (error, person) => {
