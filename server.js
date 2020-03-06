@@ -1,15 +1,16 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
-const ObjectId = require("mongodb").ObjectId;
-const assert = require("assert");
+const ObjectId = require('mongodb').ObjectId;
+const assert = require('assert');
 const dotenv = require('dotenv');
-const session = require('express-session')
-const app = express()
+const session = require('express-session');
+const app = express();
+const port = 3000;
+
 app.use(session({
   'secret': 'secret1234'
 }));
-const port = 3000;
 
 dotenv.config();
 
@@ -22,7 +23,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }))
 
-//Connect with the database-----------------------------------------------------
+//Connect with the database----------------------------------------------------
 
 let db = null;
 
@@ -39,39 +40,39 @@ client.connect(err => {
     throw err;
   }
   db = client.db(dbName);
-  console.log("Connected to database")
+  console.log('Connected to database')
 });
 
-//Routing-----------------------------------------------------------------------
+//Routing----------------------------------------------------------------------
 
 app.get('/', (req, res) => {
-  res.render('index.ejs')
+  res.render('index.ejs');
 })
 
 app.get('/sign-up', (req, res) => {
-  res.render('sign-up.ejs')
+  res.render('sign-up.ejs');
 })
 
 app.get('/log-in', (req, res) => {
-  res.render('log-in.ejs')
+  res.render('log-in.ejs');
 })
 
 app.get('/user', (req, res) => {
-  res.render('user.ejs')
+  res.render('user.ejs');
 });
 
-app.listen(port, () => console.log("Listening on port " + port))
+app.listen(port, () => console.log('Listening on port ' + port))
 
-//'Self made' packages----------------------------------------------------------
+//'Self made' packages---------------------------------------------------------
 const createUser = require('./control/createuser.js');
 
-app.post("/sign-up", createUser);
+app.post('/sign-up', createUser);
 
 
-//Error handling----------------------------------------------------------------
+//Error handling---------------------------------------------------------------
 
 app.use((err, req, res, next) => {
-  console.error(err.stack)
+  console.error(err.stack);
   res.status(500).send('Something broke!')
 })
 

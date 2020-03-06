@@ -1,8 +1,10 @@
-const MongoClient = require("mongodb").MongoClient;
-const ObjectId = require("mongodb").ObjectID;
+const MongoClient = require('mongodb').MongoClient;
+const ObjectId = require('mongodb').ObjectID;
 const dotenv = require('dotenv');
 
 dotenv.config();
+
+//Initiate a connection with the database
 
 let db = null;
 
@@ -19,11 +21,11 @@ client.connect(err => {
     throw err;
   }
   db = client.db(dbName);
-  console.log("Connected to database")
+  console.log('Connected to database');
 });
 
 
-module.exports = (req, res) => {
+module.exports = (req, res) => { //Make an object person in Json format
   let person = {
     name: req.body.name,
     lastName: req.body.lastname,
@@ -31,10 +33,12 @@ module.exports = (req, res) => {
     email: req.body.email,
     password: req.body.password,
     gender: req.body.gender,
-    preference: req.body.searchp
+    preference: req.body.searchp,
+    interests: req.body.interests
   };
 
-  db.collection("person").insertOne(person, (error, person) => {
-        res.redirect("/");
+  db.collection('person').insertOne(person, (error, person) => {  //Insert the object 'person' in the collection person.
+        res.redirect('/');
+        console.log(person.interests);
     })
 };
