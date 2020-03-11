@@ -39,6 +39,5 @@ module.exports = (req, res) => { //Make an object person in Json format
 
   db.collection('person').insertOne(person, (error, person) => {  //Insert the object 'person' in the collection person.
         res.redirect('/');
-        console.log(person.interests);
     })
 };

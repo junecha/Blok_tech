@@ -5,12 +5,14 @@
 </head>
 
 <body>
-  <h1>Nova</h1>
-  <form>
-    <label>Username <input type="text" name="email"></label>
-    <label>Password <input type="password" name="password" ></label>
-
-
+  <form method="POST" action="/log-in">
+    <h1>Nova</h1>
+    <label>Email:
+      <input type="email" name="email" placeholder="User@gmail.com" required>
+    </label>
+    <label>Password:
+      <input type="password" name="password" required>
+    </label>
+    <button type="submit">Log in</button>
   </form>
-  <button type="submit" name="log-in">Log in</button>
 </body>
