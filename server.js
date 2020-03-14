@@ -8,7 +8,7 @@ const session = require('express-session');
 const {
   check,
   validationResult
-} = require('express-validator/check')
+} = require('express-validator')
 const app = express();
 const port = 3000;
 
@@ -71,9 +71,11 @@ app.listen(port, () => console.log('Listening on port ' + port))
 //'Self made' packages---------------------------------------------------------
 const createUser = require('./control/createuser.js');
 const logIn = require('./control/login.js');
+const userLogged = require('./control/user-logged.js');
 
 app.post('/sign-up', createUser);
 app.post('/log-in', logIn);
+app.get('/user/:id', userLogged,);
 
 //Error handling---------------------------------------------------------------
 app.use((err, req, res, next) => {

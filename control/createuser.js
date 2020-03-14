@@ -21,7 +21,6 @@ client.connect(err => {
     throw err;
   }
   db = client.db(dbName);
-  console.log('Connected to database');
 });
 
 

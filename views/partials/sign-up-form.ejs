@@ -1,7 +1,7 @@
-<body>
+<body class="sign-up">
   <form method="POST" action="/sign-up">
     <fieldset>
-      <h2>Create your new profile</h2>
+      <h3>Create your new profile</h3>
       <p>Fill here you personal information for others to see.</p>
       <label>Name:
         <input type="text" name="name" placeholder="Jhon" required>
@@ -15,7 +15,7 @@
     </fieldset>
 
     <fieldset>
-      <h2>Log in</h2>
+      <h3>Log in</h3>
       <p>These forms are to log in to Nova</p>
       <label>Email:
         <input type="email" name="email" placeholder="User@gmail.com" required>
@@ -29,31 +29,58 @@
     </fieldset>
 
     <fieldset>
-      <h2>My info</h2>
-      <p>I am:</p>
-      <label>Male
-        <input type="radio" name="gender" value="Male">
-      </label>
-      <label>Female
-        <input type="radio" name="gender" value="Female">
-      </label>
-      <p>I am looking for:</p>
-      <label>Male
-        <input type="radio" name="searchp" value="Male">
-      </label>
-      <label>Female
-        <input type="radio" name="searchp" value="Female">
-      </label>
-      <p>Type of games I Play</p>
-      <label> FPS
-        <input type="checkbox" name="interests" value="FPS">
-      </label>
-      <label> MOBA
-        <input type="checkbox" name="interests" value="MOBA">
-      </label>
-      <label> Fighting
-        <input type="checkbox" name="interests" value="Fighting">
-      </label>
+      <h3>My info</h3>
+      <div class="gender-wrapper">
+        <div class="gender">
+          <p>I am:</p>
+          <label>Male
+            <input type="radio" name="gender" value="Male">
+          </label>
+          <label>Female
+            <input type="radio" name="gender" value="Female">
+          </label>
+        </div>
+        <div class="pref">
+          <p>I am interested for:</p>
+          <label>Male
+            <input type="radio" name="searchp" value="Male">
+          </label>
+          <label>Female
+            <input type="radio" name="searchp" value="Female">
+          </label>
+        </div>
+      </div>
+
+      <h3>Type of games I Play</h3>
+      <div class="games">
+        <label> FPS
+          <input type="checkbox" name="interests" value="FPS">
+        </label>
+        <label> MOBA
+          <input type="checkbox" name="interests" value="MOBA">
+        </label>
+        <label> Fighting
+          <input type="checkbox" name="interests" value="Fighting">
+        </label>
+        <label> Simulation
+          <input type="checkbox" name="interests" value="Simulations">
+        </label>
+        <label> Adventure
+          <input type="checkbox" name="interests" value="Adventure">
+        </label>
+        <label> Singleplayer
+          <input type="checkbox" name="interests" value="Singleplayer">
+        </label>
+        <label> Multiplayer
+          <input type="checkbox" name="interests" value="Multiplayer">
+        </label>
+        <label> Platformers
+          <input type="checkbox" name="interests" value="Platformers">
+        </label>
+        <label> Racing
+          <input type="checkbox" name="interests" value="Racing">
+        </label>
+      </div>
     </fieldset>
         <a href="/"><button type="submit" name="Submit">Submit</button></a>
   </form>

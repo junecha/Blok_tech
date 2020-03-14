@@ -1,8 +1,43 @@
 <% include partials/index-head.ejs %>
 <head>
-  <title>Welcome <%= name %> </title>
+  <title>Hello </title>
 </head>
 
-<body>
-  <h1> <%= name %> </h1>
+<% include partials/user-header.ejs %>
+
+<body class="user">
+  <div class="user-profile-wrapper">
+    <h2> <img src="../../static/img/profile.jpg" alt=""> </h2>
+    <section>
+      <article class="user-info-wrapper">
+        <ul>
+          <li>Name:</li>
+          <li>Age:</li>
+          <li>Sex:</li>
+          <li>Looking for:</li>
+        </ul>
+
+        <ul>
+          <li>Chun Hui Xiao</li>
+          <li>23</li>
+          <li>Male</li>
+          <li>Female</li>
+        </ul>
+      </article>
+
+      <article class="user-games">
+        <p>FPS</p>
+        <p>MOBA</p>
+        <p>Fighting</p>
+        <p>Simulation</p>
+        <p>Adventure</p>
+        <p>Singleplayer</p>
+        <p>Multiplayer</p>
+        <p>Platformers</p>
+        <p>Racing</p>
+      </article>
+    </section>
+
+  </div>
+
 </body>

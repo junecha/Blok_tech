@@ -4,15 +4,20 @@
   <title>Log in</title>
 </head>
 
-<body>
+<body class="log-in">
   <form method="POST" action="/log-in">
     <h1>Nova</h1>
-    <label>Email:
+
+    <div class="field">
       <input type="email" name="email" placeholder="User@gmail.com" required>
-    </label>
-    <label>Password:
-      <input type="password" name="password" required>
-    </label>
+      <label>Email:</label>
+    </div>
+
+    <div class="field">
+      <input type="password" name="password" placeholder="password" required>
+      <label>Password:</label>
+    </div>
+
     <button type="submit">Log in</button>
   </form>
 </body>
