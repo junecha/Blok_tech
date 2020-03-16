@@ -37,7 +37,7 @@ npm install
 
 4. Run the application
 ```
-node index.js
+npm start
 ```
 
 ## License
