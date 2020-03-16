@@ -7,14 +7,14 @@ const session = require('express-session'); //https://www.npmjs.com/package/expr
 const passport = require('passport'); //http://www.passportjs.org/docs/authenticate/
 
 const app = express();
-const port = 3000;
+const port = 8000;
 
 app.use(session({
   secret: process.env.SECRET,
   resave: false,
   saveUnitialized: false,
   cookie: {
-    maxAge: 10000
+    maxAge: 1000000
   }
 }));
 
@@ -63,21 +63,34 @@ app.get('/sign-up', (req, res) => {
 
 app.get('/log-in', (req, res) => {
   res.render('log-in.ejs');
-  console.log(req.session);
+  // console.log(req.session);
 })
 
 app.get('/user', (req, res) => {
   if(req.user) {
-    res.render('user.ejs');
-  } else {
+    res.render('user.ejs', { //Give the template engine these req from the database
+      name: req.user.name,
+      lastname: req.user.lastname,
+      age: req.user.age,
+      email: req.user.email,
+      gender: req.user.gender,
+      preference: req.user.preference,
+      interests: req.user.interests
+    });
+    console.log('Session = ',req.session.passport.user.name)
+  } else { //Authenticate if the user is logged in, if not return to log in
     res.redirect('/');
   }
 });
 
+app.get('/logout', (req, res) => {
+  req.logout();
+  res.redirect('/');
+})
+
 app.post('/log-in', passport.authenticate('local', {
   failureRedirect: '/log-in'
 }), (req, res) => {
-  console.log(req.session);
   res.redirect('/user');
 })
 

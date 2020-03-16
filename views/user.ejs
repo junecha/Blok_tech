@@ -18,23 +18,17 @@
         </ul>
 
         <ul>
-          <li> </li>
-          <li>23</li>
-          <li>Male</li>
-          <li>Female</li>
+          <li><%=name %> </li>
+          <li><%=age %></li>
+          <li><%=gender %></li>
+          <li><%=preference %></li>
         </ul>
       </article>
 
       <article class="user-games">
-        <p>FPS</p>
-        <p>MOBA</p>
-        <p>Fighting</p>
-        <p>Simulation</p>
-        <p>Adventure</p>
-        <p>Singleplayer</p>
-        <p>Multiplayer</p>
-        <p>Platformers</p>
-        <p>Racing</p>
+        <% for (let i = 0; i < interests.length; i++) { %>
+        <p><%=interests[i] _%></p>
+        <% } %>
       </article>
     </section>
 
