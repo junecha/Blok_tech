@@ -42,4 +42,4 @@ npm start
 
 ## License
 
-[MIT](https://github.com/Plous01/ProjectTech/blob/master/LICENSE)
+[MIT](https://github.com/ChunningTatum/Blok_tech/blob/master/LICENSE)
