@@ -25,7 +25,7 @@ client.connect(err => {
 
 
 module.exports = (req, res) => { //Make an object person in Json format
-  let person = {
+  let personInfo = {
     name: req.body.name,
     lastName: req.body.lastname,
     age: req.body.age,
@@ -36,7 +36,7 @@ module.exports = (req, res) => { //Make an object person in Json format
     interests: req.body.interests
   };
 
-  db.collection('person').insertOne(person, (error, person) => {  //Insert the object 'person' in the collection person.
-        res.redirect('/');
-    })
+  db.collection('person').insertOne(personInfo, (err, person) => { //Insert the object 'person' in the collection person.
+    res.redirect('/');
+  })
 };

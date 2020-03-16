@@ -25,20 +25,22 @@ client.connect(err => {
 
 module.exports = (req, res) => {
   let userLogin = {   //Object van de gegevens van de log in
-    email: req.body.email,
-    password: req.body.password
+    email: req.body.email
   }
   console.log(userLogin);
-  //Zoek in de collection en match het
-  db.collection('person').findOne(userLogin, (error, userLogin) => {
-    if (error || userLogin == null) {
-      res.render('log-in', {
-        person: userLogin,
-        error: {loginError : "We couldn't log you in, Please try again!"}
-      }) //Als er een onderdeel niet klopt, render log in dan weer
-        console.log("You didn't enter proper credentials")
-    } else {  //render de user log in als de inlog functie klopt
-      res.render('user')
-    }
-  });
+
+  const emailUser = req.body.email;
+
+  // //Zoek in de collection en match het
+  // db.collection('person').findOne(userLogin, (err, userLogin) => {
+  //   if (err || userLogin == null) {
+  //     res.render('log-in', {
+  //       person: userLogin,
+  //       error: {loginError : "We couldn't log you in, Please try again!"}
+  //     }) //Als er een onderdeel niet klopt, render log in dan weer
+  //       console.log("You didn't enter proper credentials")
+  //   } else {  //render de user log in als de inlog functie klopt
+  //     res.redirect('/user')
+  //   }
+  // });
 }
