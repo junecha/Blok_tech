@@ -1,10 +1,11 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const MongoClient = require('mongodb').MongoClient;
+const express = require('express'); //https://expressjs.com/en/starter/installing.html
+const bodyParser = require('body-parser'); //https://www.npmjs.com/package/body-parser
+const MongoClient = require('mongodb').MongoClient; //https://docs.atlas.mongodb.com/getting-started/
 const ObjectId = require('mongodb').ObjectId;
-const assert = require('assert');
-const dotenv = require('dotenv').config();
-const session = require('express-session');
+const dotenv = require('dotenv').config(); //https://www.npmjs.com/package/dotenv
+const session = require('express-session'); //https://www.npmjs.com/package/express-session
+const passport = require('passport'); //http://www.passportjs.org/docs/authenticate/
+
 const {
   check,
   validationResult
@@ -15,13 +16,15 @@ const port = 3000;
 app.use(session({
   secret: process.env.SECRET,
   resave: false,
-  saveUnitialized:  true,
-  cookie: {maxAge: 5000, secure: true}
+  saveUnitialized:  false,
+  cookie: {maxAge: 5000,}
 }));
 
-
-
+app.use(passport.initialize());
+app.use(passport.session());
+//Set template engine
 app.set('view engine', 'ejs')
+//Give acces to views
 app.set('views', 'views')
 
 app.use(bodyParser.json())
@@ -63,19 +66,22 @@ app.get('/log-in', (req, res) => {
 })
 
 app.get('/user', (req, res) => {
-  res.render('user.ejs');
+  res.render('user.ejs', { name: req.user.name});
 });
+
+app.post('login', passport.authenticate('local', {
+  succesRedirect: '/',
+  failureRedirect: '/login'
+}))
 
 app.listen(port, () => console.log('Listening on port ' + port))
 
 //'Self made' packages---------------------------------------------------------
 const createUser = require('./control/createuser.js');
 const logIn = require('./control/login.js');
-const userLogged = require('./control/user-logged.js');
 
 app.post('/sign-up', createUser);
 app.post('/log-in', logIn);
-app.get('/user/:id', userLogged,);
 
 //Error handling---------------------------------------------------------------
 app.use((err, req, res, next) => {

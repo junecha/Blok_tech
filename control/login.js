@@ -38,9 +38,7 @@ module.exports = (req, res) => {
       }) //Als er een onderdeel niet klopt, render log in dan weer
         console.log("You didn't enter proper credentials")
     } else {  //render de user log in als de inlog functie klopt
-      req.session.userLoginid = userLogin._id;
-      console.log(userLogin)
-
+      res.render('user')
     }
   });
 }
