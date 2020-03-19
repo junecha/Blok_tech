@@ -13,6 +13,8 @@ Check my wiki for all the documentation. (FYI wiki is written in Dutch)
 ## Database
 
 Currently I am using a MongoDB database which uses Json structure.
+![database](https://user-images.githubusercontent.com/45426792/77068100-50f74b80-69e6-11ea-8fe3-4d412ae415f3.PNG)
+
 
 ## Packages used
 
