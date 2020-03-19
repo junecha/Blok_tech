@@ -3,6 +3,9 @@
 ## What am I looking at?
 This is a dating application for the project Tech I am following. The application is build in Node and the server is written with Express with an template engine 'Ejs'. The database that I am using with the application is MongoDB.
 
+## Job story:
+As a user of the dating site, I want to be able to tell other's my interests, so other users can get to know me better and result in better matches. To be able to meet these requirements, the user is able to make a account and set their interests in games, these interest will be set in a certain way for others to see. 
+
 ## Wiki
 
 Check my wiki for all the documentation. (FYI wiki is written in Dutch)
