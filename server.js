@@ -34,9 +34,9 @@ app.use(bodyParser.urlencoded({
 }));
 
 //Connect with the database----------------------------------------------------
-let db = null;
+let db = process.env.DB_URI;
 
-const dbUri = process.env.DB_URI;
+// const dbUri = process.env.DB_URI;
 const dbName = process.env.DB_NAME;
 const client = new MongoClient(dbUri, {
   useNewUrlParser: true,
@@ -48,7 +48,7 @@ client.connect(err => {
     console.log(err);
     throw err;
   }
-  db = client.db(dbName);
+  // db = client.db(dbName);
   console.log('Connected to database');
 });
 
