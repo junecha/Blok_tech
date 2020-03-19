@@ -37,6 +37,8 @@ https://docs.atlas.mongodb.com/getting-started/
 For sessions and authentication, I have used passport with epress session. 
 http://www.passportjs.org/docs/authenticate/
 
+For the full list of packages, look in the package.json file.
+
 
 ## How to install
 
