@@ -287,8 +287,9 @@ a:link, a:visited {
 
   .user-info-wrapper {
     display: flex;
-    flex-direction: row;
-    margin: 4em 0;
+    flex-direction: column;
+    margin: 1em 0;
+    margin-bottom: 2em;
   }
   .user-info-wrapper ul:first-of-type {
     font-weight: 400;
@@ -317,5 +318,14 @@ a:link, a:visited {
     font-weight: 400;
     margin-right: 1em;
     margin-bottom: .3em;
+  }
+
+  .user-info-details {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .user h4 {
+    margin-bottom: .5em;
   }
 }

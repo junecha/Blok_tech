@@ -5,69 +5,80 @@ const ObjectId = require('mongodb').ObjectId;
 const dotenv = require('dotenv').config(); //https://www.npmjs.com/package/dotenv
 const session = require('express-session'); //https://www.npmjs.com/package/express-session
 const passport = require('passport'); //http://www.passportjs.org/docs/authenticate/
+const port = 3000;
 
-const app = express();
-const port = 8000;
+//'Self made' packages---------------------------------------------------------
+require('./control/passport.js')
+const createUser = require('./control/createuser.js');
+const app = express()
 
-app.use(session({
-  secret: process.env.SECRET,
-  resave: false,
-  saveUnitialized: false,
-  cookie: {
-    maxAge: 1000000
-  }
-}));
-
-app.use(passport.initialize());
-app.use(passport.session());
-
-//Set template engine
-app.set('view engine', 'ejs');
-
-//Give acces to views
-app.set('views', 'views');
-
-app.use(bodyParser.json());
-app.use('/static', express.static('static'));
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
+express()
+  .use('/static', express.static('static'))
+  .use(bodyParser.urlencoded({
+    extended: true
+  }))
+  .use(bodyParser.json())
+  .use(session({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUnitialized: false,
+    cookie: {
+      maxAge: 1000000
+    }
+  }))
+  .use(passport.initialize())
+  .use(passport.session())
+  .get('/', index)
+  .get('/sign-up', signUp)
+  .get('/log-in', logIn)
+  .get('/user', userPage)
+  .get('/logout', logOut)
+  .set('view engine', 'ejs') //Set template engine
+  .set('views', 'views') //Give acces to views
+  .post('/sign-up', createUser)
+  .post('/log-in', passport.authenticate('local', { failureRedirect: '/log-in', }), authCheck)
+  .listen(port, () => console.log('Listening on port ' + port))
 
 //Connect with the database----------------------------------------------------
-let db = process.env.DB_URI;
+let db = null;
 
-// const dbUri = process.env.DB_URI;
+const dbUri = process.env.DB_URI;
 const dbName = process.env.DB_NAME;
 const client = new MongoClient(dbUri, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
 
-client.connect(err => {
+client.connect (err => {
   if (err) {
-    console.log(err);
+    console.log (err);
     throw err;
   }
-  // db = client.db(dbName);
+  db = client.db (dbName);
   console.log('Connected to database');
 });
 
 //Routing----------------------------------------------------------------------
-app.get('/', (req, res) => {
+function index (req, res) {
   res.render('index.ejs');
-})
+}
 
-app.get('/sign-up', (req, res) => {
+function signUp (req, res) {
   res.render('sign-up.ejs');
-})
+}
 
-app.get('/log-in', (req, res) => {
+function logIn (req, res) {
   res.render('log-in.ejs');
   // console.log(req.session);
-})
+}
 
-app.get('/user', (req, res) => {
-  if(req.user) {
+function authCheck (req, res) {
+  console.log('redirecting to /user')
+  res.redirect('/user');
+}
+
+function userPage (req, res) {
+  if (req.user) {
     res.render('user.ejs', { //Give the template engine these req from the database
       name: req.user.name,
       lastname: req.user.lastname,
@@ -77,38 +88,24 @@ app.get('/user', (req, res) => {
       preference: req.user.preference,
       interests: req.user.interests
     });
-    console.log('Session = ',req.session.passport.user.name)
+    console.log('Session = ', req.session.passport.user.name)
   } else { //Authenticate if the user is logged in, if not return to log in
+    console.log('redirecting to / anyway ')
     res.redirect('/');
   }
-});
+}
 
-app.get('/logout', (req, res) => {
+function logOut (req, res) {
   req.logout();
   res.redirect('/');
-})
-
-app.post('/log-in', passport.authenticate('local', {
-  failureRedirect: '/log-in'
-}), (req, res) => {
-  res.redirect('/user');
-})
-
-app.listen(port, () => console.log('Listening on port ' + port))
-
-//'Self made' packages---------------------------------------------------------
-require('./control/passport.js');
-const createUser = require('./control/createuser.js');
-
-app.post('/sign-up', createUser);
-
+}
 
 //Error handling---------------------------------------------------------------
-app.use((err, req, res, next) => {
+express().use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send('Something broke!')
 })
 
-app.use((req, res, next) => {
+express().use((req, res, next) => {
   res.render('404.ejs');
 })
