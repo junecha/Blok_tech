@@ -3,8 +3,8 @@
     <fieldset>
       <h3>Create your new profile</h3>
       <p>Fill here you personal information for others to see.</p>
-      <label>Name:
-        <input type="text" name="name" placeholder="Jhon" required>
+      <label class="name" >Name:
+        <input  type="text" name="name" placeholder="Jhon" oninvalid="invalidName(this)" required>
       </label>
       <label>Last name:
         <input type="text" name="lastname" placeholder="Doe" required>
@@ -34,19 +34,19 @@
         <div class="gender">
           <p>I am:</p>
           <label>Male
-            <input type="radio" name="gender" value="Male">
+            <input type="radio" name="gender" value="Male"required>
           </label>
           <label>Female
-            <input type="radio" name="gender" value="Female">
+            <input type="radio" name="gender" value="Female"required>
           </label>
         </div>
         <div class="pref">
           <p>I am interested for:</p>
           <label>Male
-            <input type="radio" name="searchp" value="Male">
+            <input type="radio" name="searchp" value="Male"required>
           </label>
           <label>Female
-            <input type="radio" name="searchp" value="Female">
+            <input type="radio" name="searchp" value="Female"required>
           </label>
         </div>
       </div>
