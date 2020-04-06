@@ -53,7 +53,6 @@ passport.serializeUser((user, done) => {
 passport.deserializeUser((id, done) => {
   db.collection('person').findOne(id, (err, user) => {
     console.log('deserializing user', id);
-    console.log(user);
     done(err, id);
   });
 });

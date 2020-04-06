@@ -1,0 +1,51 @@
+<body class="sign-up">
+  <form method="POST" action="/editprofile">
+    <fieldset>
+      <h3>Update profile</h3>
+      <p>Fill here you personal information for others to see.</p>
+      <label class="name" >Name:
+        <input  type="text" name="name" placeholder="Jhon" oninvalid="invalidName(this)" required>
+      </label>
+      <label>Last name:
+        <input type="text" name="lastname" placeholder="Doe" required>
+      </label>
+      <label>Age:
+        <input type="text" name="age" placeholder="e.g. '23'" required>
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <h3>Type of games I Play</h3>
+      <div class="games">
+        <label> FPS
+          <input type="checkbox" name="interests" value="FPS">
+        </label>
+        <label> MOBA
+          <input type="checkbox" name="interests" value="MOBA">
+        </label>
+        <label> Fighting
+          <input type="checkbox" name="interests" value="Fighting">
+        </label>
+        <label> Simulation
+          <input type="checkbox" name="interests" value="Simulations">
+        </label>
+        <label> Adventure
+          <input type="checkbox" name="interests" value="Adventure">
+        </label>
+        <label> Singleplayer
+          <input type="checkbox" name="interests" value="Singleplayer">
+        </label>
+        <label> Multiplayer
+          <input type="checkbox" name="interests" value="Multiplayer">
+        </label>
+        <label> Platformers
+          <input type="checkbox" name="interests" value="Platformers">
+        </label>
+        <label> Racing
+          <input type="checkbox" name="interests" value="Racing">
+        </label>
+      </div>
+    </fieldset>
+    <button type="submit" name="Submit">Save</button>
+  </form>
+</body>

@@ -12,7 +12,7 @@ express()
   .use(session({
     secret: process.env.SECRET,
     resave: false,
-    saveUnitialized: false,
+    saveUnitialized: 'false',
     cookie: {
       maxAge: 1000000
     }
