@@ -45,7 +45,7 @@ profile.userPage = function (req, res) {
 }
 
 profile.doEditProfile = function (req, res) {
-
+  //https://docs.mongodb.com/manual/reference/operator/update/set/
   db.collection('person').updateOne({ _id: ObjectId(req.session.passport.user._id) }, {
     $set: {
       name: req.body.name,
