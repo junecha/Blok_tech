@@ -4,7 +4,6 @@ const ObjectId = require('mongodb').ObjectId;
 const session = require('express-session'); //https://www.npmjs.com/package/express-session
 const passport = require('passport'); //http://www.passportjs.org/docs/authenticate/
 const createUser = require('../control/createuser.js');
-const doEditProfile = require('../control/updateUser.js')
 const profile = require('../control/profile.js')
 require('../control/passport.js')
 
