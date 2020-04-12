@@ -17,6 +17,18 @@ body {
   font-size: 1.5em;
 }
 
+.hidden {
+  display: none;
+}
+
+#display {
+  display: inline;
+}
+
+#hidden {
+  display: none;
+}
+
 a:link, a:visited {
   color: #f2f2f2;
 }
@@ -119,7 +131,6 @@ a:link, a:visited {
     font-style: normal;
     color: #9affdd;
     font-size: 2em;
-    margin-top: 1.2em;
     margin-bottom: .5em;
   }
 
@@ -166,6 +177,11 @@ a:link, a:visited {
     display: flex;
     justify-content: space-between;
     margin-top: .2em;
+  }
+
+  .but {
+    display: flex;
+    flex-direction: row;
   }
 
   label {
@@ -231,7 +247,6 @@ a:link, a:visited {
     font-size: 1.5em;
     -webkit-appearance: none;
     cursor: text;
-
   }
 
   .log-in input:focus {
@@ -262,13 +277,13 @@ a:link, a:visited {
     opacity: .2;
   }
 
-  .log-in input:not(:placeholder-shown)+ label,
-  .log-in input:focus + label {
+  .log-in input:not(:placeholder-shown)+label,
+  .log-in input:focus+label {
     transform: translate(0, 0) scale(1);
     cursor: pointer;
   }
 
-  .user-header-wrapper  {
+  .user-header-wrapper {
     display: flex;
     flex-direction: row;
   }
@@ -291,6 +306,7 @@ a:link, a:visited {
     margin: 1em 0;
     margin-bottom: 2em;
   }
+
   .user-info-wrapper ul:first-of-type {
     font-weight: 400;
     display: flex;
@@ -313,8 +329,10 @@ a:link, a:visited {
 
   .user-games p {
     background-color: #5e4fa0;
-    padding: .2em .4em;;
-    border-radius: .4em;;
+    padding: .2em .4em;
+    ;
+    border-radius: .4em;
+    ;
     font-weight: 400;
     margin-right: 1em;
     margin-bottom: .3em;
@@ -333,5 +351,63 @@ a:link, a:visited {
     color: red;
     font-size: .8em;
     font-weight: 300
+  }
+
+  /* Progress bar */
+  #stepProgressBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 300px;
+    margin-bottom: 40px;
+  }
+
+  #step {
+    text-align: center;
+  }
+
+  #step-text {
+    margin-bottom: 10px;
+    color: #acbccd;
+  }
+
+  .bullet {
+    border: 1px solid #acbccd;
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    color: #acbccd;
+    display: inline-block;
+    position: relative;
+    transition: background-color 500ms;
+    line-height: 20px;
+  }
+
+  .bullet.completed {
+    color: white;
+    background-color: #9affdd;
+  }
+
+  .bullet.completed::after {
+    content: '';
+    position: absolute;
+    right: -85px;
+    bottom: 10px;
+    height: 1px;
+    width: 70px;
+    background-color: #9affdd;
+  }
+
+  /* Base styles and helper stuff */
+
+  #text-center {
+    text-align: center;
+  }
+
+  #container {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 40px;
   }
 }

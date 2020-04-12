@@ -1,87 +1,102 @@
 <body class="sign-up">
   <form method="POST" action="/sign-up">
-    <fieldset>
-      <h3>Create your new profile</h3>
-      <p>Fill here you personal information for others to see.</p>
-      <label class="name" >Name:
-        <input  type="text" name="name" placeholder="Jhon" oninvalid="invalidName(this)" required>
-      </label>
-      <label>Last name:
-        <input type="text" name="lastname" placeholder="Doe" required>
-      </label>
-      <label>Age:
-        <input type="text" name="age" placeholder="e.g. '23'" required>
-      </label>
-    </fieldset>
+    <div id="set1">
+      <fieldset>
+        <h3>Create your new profile</h3>
+        <p>Fill here you personal information for others to see.</p>
+        <label class="name">Name:
+          <input type="text" name="name" placeholder="Jhon" oninvalid="invalidName(this)" required>
+        </label>
+        <label>Last name:
+          <input type="text" name="lastname" placeholder="Doe" required>
+        </label>
+        <label>Age:
+          <input type="text" name="age" placeholder="e.g. '23'" required>
+        </label>
+        <button id="but1" type="button" name="button" hidden >Next</button>
+      </fieldset>
+    </div>
 
-    <fieldset>
-      <h3>Log in</h3>
-      <p>These forms are to log in to Nova</p>
-      <label>Email:
-        <input type="email" name="email" placeholder="User@gmail.com" required>
-      </label>
-      <label>Password:
-        <input type="password" name="password" required>
-      </label>
-      <label>repeat password:
-        <input type="password" required>
-      </label>
-    </fieldset>
+    <div id="set2">
+      <fieldset>
+        <h3>Log in</h3>
+        <p>These forms are to log in to Nova</p>
+        <label>Email:
+          <input type="email" name="email" placeholder="User@gmail.com" required>
+        </label>
+        <label>Password:
+          <input type="password" name="password" required>
+        </label>
+        <label>repeat password:
+          <input type="password" required>
+        </label>
+        <div id="but">
+          <button id="back1" type="button" name="button" hidden >Back</button>
+          <button id="but2" type="button" name="button" hidden >Next</button>
+        </div>
+      </fieldset>
+    </div>
 
-    <fieldset>
-      <h3>My info</h3>
-      <div class="gender-wrapper">
-        <div class="gender">
-          <p>I am:</p>
-          <label>Male
-            <input type="radio" name="gender" value="Male"required>
+    <div id="set3">
+      <fieldset>
+        <h3>My info</h3>
+        <div class="gender-wrapper">
+          <div class="gender">
+            <p>I am:</p>
+            <label>Male
+              <input type="radio" name="gender" value="Male" required>
+            </label>
+            <label>Female
+              <input type="radio" name="gender" value="Female" required>
+            </label>
+          </div>
+          <div class="pref">
+            <p>I am interested for:</p>
+            <label>Male
+              <input type="radio" name="searchp" value="Male" required>
+            </label>
+            <label>Female
+              <input type="radio" name="searchp" value="Female" required>
+            </label>
+          </div>
+        </div>
+
+        <h3>Type of games I Play</h3>
+        <div class="games">
+          <label> FPS
+            <input type="checkbox" name="interests" value="FPS">
           </label>
-          <label>Female
-            <input type="radio" name="gender" value="Female"required>
+          <label> MOBA
+            <input type="checkbox" name="interests" value="MOBA">
+          </label>
+          <label> Fighting
+            <input type="checkbox" name="interests" value="Fighting">
+          </label>
+          <label> Simulation
+            <input type="checkbox" name="interests" value="Simulations">
+          </label>
+          <label> Adventure
+            <input type="checkbox" name="interests" value="Adventure">
+          </label>
+          <label> Singleplayer
+            <input type="checkbox" name="interests" value="Singleplayer">
+          </label>
+          <label> Multiplayer
+            <input type="checkbox" name="interests" value="Multiplayer">
+          </label>
+          <label> Platformers
+            <input type="checkbox" name="interests" value="Platformers">
+          </label>
+          <label> Racing
+            <input type="checkbox" name="interests" value="Racing">
           </label>
         </div>
-        <div class="pref">
-          <p>I am interested for:</p>
-          <label>Male
-            <input type="radio" name="searchp" value="Male"required>
-          </label>
-          <label>Female
-            <input type="radio" name="searchp" value="Female"required>
-          </label>
+        <div id="but">
+          <button id="back2" type="button" name="button" hidden >Back</button>
+          <button id="subButton" type="submit" name="Submit">Submit</button>
         </div>
-      </div>
+      </fieldset>
+    </div>
 
-      <h3>Type of games I Play</h3>
-      <div class="games">
-        <label> FPS
-          <input type="checkbox" name="interests" value="FPS">
-        </label>
-        <label> MOBA
-          <input type="checkbox" name="interests" value="MOBA">
-        </label>
-        <label> Fighting
-          <input type="checkbox" name="interests" value="Fighting">
-        </label>
-        <label> Simulation
-          <input type="checkbox" name="interests" value="Simulations">
-        </label>
-        <label> Adventure
-          <input type="checkbox" name="interests" value="Adventure">
-        </label>
-        <label> Singleplayer
-          <input type="checkbox" name="interests" value="Singleplayer">
-        </label>
-        <label> Multiplayer
-          <input type="checkbox" name="interests" value="Multiplayer">
-        </label>
-        <label> Platformers
-          <input type="checkbox" name="interests" value="Platformers">
-        </label>
-        <label> Racing
-          <input type="checkbox" name="interests" value="Racing">
-        </label>
-      </div>
-    </fieldset>
-    <button type="submit" name="Submit">Submit</button>
   </form>
 </body>
